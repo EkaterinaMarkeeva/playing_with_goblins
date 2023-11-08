@@ -54,8 +54,4 @@ export default class GamePlay {
     img.classList.add('goblin');
     allCells[position].appendChild(img);
   }
-
-  setCursor(cursor) {
-    this.boardEl.style.cursor = cursor;
-  }
 }

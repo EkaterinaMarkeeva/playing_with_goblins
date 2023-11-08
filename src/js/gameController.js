@@ -1,5 +1,4 @@
 import { getRandomInt } from './generators';
-import cursors from './cursors';
 
 export default class GameController {
   timeOut = 1000;
@@ -13,7 +12,6 @@ export default class GameController {
   init() {
     this.gamePlay.drawScore();
     this.gamePlay.drawUi();
-    this.gamePlay.setCursor(cursors.custom);
     this.gamePlay.drawGoblin();
     this.changesGoblinPosition();
     this.registrationEvents();
@@ -31,7 +29,6 @@ export default class GameController {
     this.goblinAppearanceInterval = setInterval(() => {
       if (counter === 4) {
         clearInterval(this.goblinAppearanceInterval);
-        this.gamePlay.setCursor(cursors.auto);
         alert(`Вы проиграли. Ваш счёт ${this.gamePlay.score}`);
         return;
       }
